@@ -1,6 +1,6 @@
-import { CommandRegistry } from "@layers/command-registry";
-import { Event } from "@structures/event";
 import { Effect } from "effect";
+import { CommandRegistry } from "@/layers/command-registry";
+import { Event } from "@/structures/event";
 
 export const interactionCreate = Event.make({
   name: "interactionCreate",

@@ -1,7 +1,7 @@
-import type { Bot } from "@config/bot";
-import type { CommandRegistry } from "@layers/command-registry";
 import type { ClientEvents } from "discord.js";
 import type { Effect } from "effect";
+import type { Bot } from "@/config/bot";
+import type { CommandRegistry } from "@/layers/command-registry";
 
 export type EventDeps = Bot | CommandRegistry;
 

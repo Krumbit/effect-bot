@@ -34,10 +34,7 @@
       "@/commands/*": ["./src/commands/*"],
       "@/events/*": ["./src/events/*"],
       "@/layers/*": ["./src/layers/*"],
-      "@/layers": ["./src/layers/index.ts"],
-      "@config/*": ["./src/config/*"],
-      "@layers/*": ["./src/layers/*"],
-      "@structures/*": ["./src/structures/*"]
+      "@/layers": ["./src/layers/index.ts"]
     }
   }
 }

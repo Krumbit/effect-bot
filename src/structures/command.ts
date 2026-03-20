@@ -1,10 +1,10 @@
-import type { Bot } from "@config/bot";
 import {
   type ChatInputCommandInteraction,
   SlashCommandBuilder,
   type SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
 import type { Effect } from "effect";
+import type { Bot } from "@/config/bot";
 
 type CommandDeps = Bot;
 

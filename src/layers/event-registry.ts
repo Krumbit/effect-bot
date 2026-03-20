@@ -1,7 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { type Event, isEvent } from "@structures/event";
 import { Context, Effect, Layer } from "effect";
+import { type Event, isEvent } from "@/structures/event";
 
 export class EventRegistry extends Context.Tag("EventRegistry")<
   EventRegistry,

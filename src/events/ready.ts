@@ -1,5 +1,5 @@
-import { Event } from "@structures/event";
 import { Effect } from "effect";
+import { Event } from "@/structures/event";
 
 export const ready = Event.make({
   name: "clientReady",
