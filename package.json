@@ -16,7 +16,9 @@
     "check": "ultracite check",
     "fix": "ultracite fix",
     "prepare": "lefthook install",
-    "dev": "bun run src/index.ts"
+    "dev": "bun run src/index.ts",
+    "deploy:dev": "NODE_ENV=development bun run scripts/deploy-commands.ts",
+    "deploy:live": "NODE_ENV=production bun run scripts/deploy-commands.ts"
   },
   "dependencies": {
     "discord.js": "^14.25.1",

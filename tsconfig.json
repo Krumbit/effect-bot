@@ -27,7 +27,8 @@
     "noPropertyAccessFromIndexSignature": false,
 
     "paths": {
-      "@config/*": ["./src/config/*"]
+      "@config/*": ["./src/config/*"],
+      "@structures/*": ["./src/structures/*"]
     }
   }
 }
