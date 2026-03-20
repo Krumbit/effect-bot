@@ -3,7 +3,6 @@ import { Config, Context, Layer, type Redacted } from "effect";
 interface BotConfig {
   readonly clientId: Redacted.Redacted<string>;
   readonly guildId: string;
-  readonly maxRetries: number;
   readonly token: Redacted.Redacted<string>;
 }
 
@@ -18,7 +17,7 @@ export const BotDev = Layer.effect(
   }).pipe(
     Config.map((secrets) => ({
       ...secrets,
-      maxRetries: 3,
+      // Add more config values below
     }))
   )
 );
@@ -32,7 +31,7 @@ export const BotProd = Layer.effect(
   }).pipe(
     Config.map((secrets) => ({
       ...secrets,
-      maxRetries: 5,
+      // Add more config values below
     }))
   )
 );
