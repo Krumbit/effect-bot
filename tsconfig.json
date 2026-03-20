@@ -26,8 +26,17 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
 
+    "baseUrl": ".",
     "paths": {
+      "@/config/*": ["./src/config/*"],
+      "@/config": ["./src/config/index.ts"],
+      "@/structures/*": ["./src/structures/*"],
+      "@/commands/*": ["./src/commands/*"],
+      "@/events/*": ["./src/events/*"],
+      "@/layers/*": ["./src/layers/*"],
+      "@/layers": ["./src/layers/index.ts"],
       "@config/*": ["./src/config/*"],
+      "@layers/*": ["./src/layers/*"],
       "@structures/*": ["./src/structures/*"]
     }
   }

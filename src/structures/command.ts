@@ -29,3 +29,11 @@ export const Command = {
     ...options,
   }),
 };
+
+export const isCommand = (value: unknown): value is Command =>
+  typeof value === "object" &&
+  value !== null &&
+  "builder" in value &&
+  "name" in value &&
+  "execute" in value &&
+  typeof value.execute === "function";

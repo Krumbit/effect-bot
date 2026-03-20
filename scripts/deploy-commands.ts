@@ -1,12 +1,12 @@
 import { REST, Routes } from "discord.js";
 import { Effect, Redacted } from "effect";
-import { Bot } from "../src/config/bot.ts";
-import { AppConfig } from "../src/config/index.ts";
-import { loadCommands } from "../src/utils/loader.ts";
+import { Config } from "@/config";
+import { AppLayer } from "@/layers";
+import { CommandRegistry } from "@/layers/command-registry.ts";
 
 const deploy = Effect.gen(function* () {
-  const bot = yield* Bot;
-  const commandMap = yield* loadCommands;
+  const bot = yield* Config.Bot;
+  const commandMap = yield* CommandRegistry;
 
   const body = [...commandMap.values()].flatMap((command) =>
     command.builder ? [command.builder.toJSON()] : []
@@ -35,6 +35,6 @@ const deploy = Effect.gen(function* () {
 
   const count = Array.isArray(data) ? data.length : 0;
   yield* Effect.log(`Successfully reloaded ${count} application (/) commands.`);
-}).pipe(Effect.provide(AppConfig));
+}).pipe(Effect.provide(AppLayer));
 
 Effect.runPromise(deploy);
