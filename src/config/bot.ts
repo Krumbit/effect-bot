@@ -14,25 +14,25 @@ export const BotDev = Layer.effect(
   Config.all({
     token: Config.redacted("BOT_TOKEN"),
     clientId: Config.redacted("CLIENT_ID"),
+    guildId: Config.string("GUILD_ID"),
   }).pipe(
     Config.map((secrets) => ({
       ...secrets,
       maxRetries: 3,
-      guildId: "1005350654417575968",
     }))
   )
 );
 
-export const BotLive = Layer.effect(
+export const BotProd = Layer.effect(
   Bot,
   Config.all({
     token: Config.redacted("BOT_TOKEN"),
     clientId: Config.redacted("CLIENT_ID"),
+    guildId: Config.string("GUILD_ID"),
   }).pipe(
     Config.map((secrets) => ({
       ...secrets,
       maxRetries: 5,
-      guildId: "1005350654417575968", // TODO: Change to live guild ID
     }))
   )
 );
